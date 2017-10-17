@@ -40,13 +40,15 @@ public class Practice07MatrixTranslateView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        matrix.postTranslate(-100,-100);
         canvas.save();
+        matrix.reset();
+        matrix.postTranslate(-100,-100);
         canvas.concat(matrix);
         canvas.drawBitmap(bitmap, point1.x, point1.y, paint);
         canvas.restore();
-        matrix.postTranslate(200,200);
         canvas.save();
+        matrix.reset();
+        matrix.postTranslate(200,200);
         canvas.concat(matrix);
         canvas.drawBitmap(bitmap, point2.x, point2.y, paint);
         canvas.restore();
